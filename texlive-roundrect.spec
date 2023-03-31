@@ -1,6 +1,6 @@
 Name:		texlive-roundrect
 Version:	39796
-Release:	1
+Release:	2
 Summary:	MetaPost macros for highly configurable rounded rectangles (optionally with text)
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/roundrect
