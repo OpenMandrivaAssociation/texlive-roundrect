@@ -3,7 +3,7 @@ Version:	39796
 Release:	2
 Summary:	MetaPost macros for highly configurable rounded rectangles (optionally with text)
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/roundrect
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/roundrect
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/roundrect.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/roundrect.doc.r%{version}.tar.xz
