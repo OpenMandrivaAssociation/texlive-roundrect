@@ -1,41 +1,23 @@
-Name:		texlive-roundrect
-Version:	39796
-Release:	2
-Summary:	MetaPost macros for highly configurable rounded rectangles (optionally with text)
+%global tl_name roundrect
+%global tl_revision 39796
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.2
+Release:	%{tl_revision}.1
+Summary:	MetaPost macros for highly configurable rounded rectangles (optionally with t...
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/roundrect
+URL:		https://www.ctan.org/tex-archive/graphics/metapost/contrib/macros/roundrect
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/roundrect.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/roundrect.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/roundrect.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/roundrect.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/roundrect.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/roundrect.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The roundrect macros for MetaPost provide ways to produce
-rounded rectangles, which may or may not contain a title bar or
-text (the title bar may itself contain text). They are
-extremely configurable.
+The roundrect macros for MetaPost provide ways to produce rounded
+rectangles, which may or may not contain a title bar or text (the title
+bar may itself contain text). They are extremely configurable.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/metapost/roundrect
-%{_texmfdistdir}/metapost/roundrect
-%doc %{_texmfdistdir}/doc/metapost/roundrect
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
